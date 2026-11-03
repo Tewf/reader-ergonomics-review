@@ -27,15 +27,15 @@ How the pool was built, so that a reader can run the search again. Its reader is
 
 <Database, field searched, identity sent (none), date of the counts.>
 
-| Id | String as run | Count |
-|---|---|---|
-| F1 | <the string, exactly> | <n> |
+| Id | String as run | Count | New concept |
+|---|---|---|---|
+| F1 | <the string, exactly> | <n> | <one letter per result screened, in order: y if it added a concept, n if not; `ynnyn`> |
 
 ## 5. Grey search
 
-| Id | Producer or engine | String or what was read | Result |
-|---|---|---|---|
-| G1 | <where> | <string or page> | <screened, included> |
+| Id | Producer or engine | String or what was read | Result | New concept |
+|---|---|---|---|---|
+| G1 | <where> | <string or page> | <screened, included> | <y or n per result, in order> |
 
 ## 6. Stopping rule
 
@@ -71,6 +71,7 @@ How the pool was built, so that a reader can run the search again. Its reader is
 | The grey score | Table 7 and section 5.2 (Garousi 2019) | convention; reliability unmeasured |
 | How many reviewers, independently | item 8 (Page 2021); the evidence for a second reader (Edwards 2002; Waffenschmidt 2019) | measured for screening in health |
 | What was not searched | limits of the review process (Page 2021, item 23c) | convention |
+| A letter per result screened: did it add a concept | a stopping estimator needs the new concepts of each result; no log of the family held them ([log concepts per result](../principles/record/log-concepts-per-result.md)) | supported with caveat |
 | The forward pass and the second rater, as later sections | snowballing found more than the protocol's searches (Greenhalgh 2005; Wohlin 2022) | measured, descriptive |
 
 ## Worked example
@@ -84,8 +85,9 @@ How the pool was built, so that a reader can run the search again. Its reader is
 2. A row never counts several strings together.
 3. The stopping rule is stated before the search and applied.
 4. The protocol says what was not searched, and names its limits.
-5. A later pass (forward citations, a second rater) is a numbered section of its own; a second rater's section reports the agreement.
-6. Identity is not sent to any service; a source reachable only that way is called unverifiable.
+5. Each search table has a column New concept: one letter per result screened, in order, y if it added a concept and n if not, or the words not run.
+6. A later pass (forward citations, a second rater) is a numbered section of its own; a second rater's section reports the agreement.
+7. Identity is not sent to any service; a source reachable only that way is called unverifiable.
 
 ## The principles it applies
 
@@ -98,6 +100,7 @@ How the pool was built, so that a reader can run the search again. Its reader is
 ## Checked by
 
 - `search-record` (exact): a table with a String column, a count or a stated failure on each row, and no row for several strings. It warns when the protocol never says what was not searched or states no stopping rule.
+- `search-record` also asks the New concept column: an error in a protocol dated 2026-11-04 or later, a warning before.
 - `second-rater` (exact): a second-rater section reports an agreement.
 - `shape-conformance` (exact): the ten headings.
 - That the count is what the engine returns is checked by running the search again, not here.

@@ -82,3 +82,10 @@ question = "the name 'references' and the opening are far apart in meaning (0.16
 file = "b605b54f3c61"
 answer = "The name predicts the content: the file opens with the heading `Bibliography` and a table of keys, and the shape says the list may be called the bibliography."
 
+
+[[answer]]
+check = "name-content"
+path = "principles/record/log-concepts-per-result.md"
+question = "the name 'concepts result' and the opening are far apart in meaning (0.14): does the name predict the content?"
+file = "ce03d7ca86e1"
+answer = "The name predicts the content: the file opens with the claim `records, for each result screened and in order, whether it added a concept`."

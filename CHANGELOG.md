@@ -3,6 +3,15 @@
 The releases this repository pins, newest first, in the form of [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 A pin move is recorded here, not in decisions/.
 
+## Unreleased
+
+### Added
+
+- The principle [log concepts per result](principles/record/log-concepts-per-result.md), and a New concept column in the
+  search tables of the protocol shape. `search-record` asks for it: an error in a protocol dated 2026-11-04 or later,
+  a warning before. Cause: no protocol of the family logged what each result added, so no stopping estimator could
+  judge a search (ai-augmented-data-gathering).
+
 ## 2026-11-03
 
 ### Added

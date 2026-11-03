@@ -43,10 +43,10 @@ PROTOCOL = """# Protocol
 
 ## Formal search
 
-| Id | String | Hits |
-|---|---|---|
-| F1 | "snowballing" | 806 |
-| F2 | "grey literature" | not run |
+| Id | String | Hits | New concept |
+|---|---|---|---|
+| F1 | "snowballing" | 806 | ynnyn |
+| F2 | "grey literature" | not run | not run |
 
 ## Stopping rule
 
@@ -178,7 +178,7 @@ class Rules(unittest.TestCase):
         self.assertIn("no table of search strings", self.messages(search)[0])
 
     def test_several_strings_under_one_count(self) -> None:
-        self.review(protocol=PROTOCOL.replace('| F1 | "snowballing" | 806 |', '| F1 | 4 strings on one server | 37 |'))
+        self.review(protocol=PROTOCOL.replace('| F1 | "snowballing" | 806 | ynnyn |', '| F1 | 4 strings on one server | 37 |'))
         self.assertIn("4 strings under one count", self.messages(search)[0])
 
     def test_missing_not_searched_and_stopping_rule_warn(self) -> None:
@@ -186,6 +186,20 @@ class Rules(unittest.TestCase):
         kinds = {(f.kind, f.message[:20]) for f in search.check(self.root, {})}
         self.assertEqual({kind for kind, _ in kinds}, {"warning"})
         self.assertEqual(len(kinds), 2)
+
+    def test_no_concept_column_is_a_warning_before_the_date(self) -> None:
+        self.review(protocol=PROTOCOL.replace(" | New concept |", " |").replace("---|---|---|---|", "---|---|---|").replace(" | ynnyn |", " |").replace(" | not run | not run |", " | not run |"))
+        found = search.check(self.root, {})
+        self.assertEqual([(f.kind, "concepts per result" in f.message) for f in found], [("warning", True)])
+
+    def test_no_concept_column_is_an_error_from_the_date(self) -> None:
+        bare = PROTOCOL.replace(" | New concept |", " |").replace("---|---|---|---|", "---|---|---|").replace(" | ynnyn |", " |").replace(" | not run | not run |", " | not run |")
+        self.review(protocol=bare.replace("# Protocol\n", "# Protocol\n\nRun on 2026-11-04.\n", 1))
+        self.assertEqual({f.kind for f in search.check(self.root, {})}, {"error"})
+
+    def test_malformed_concept_cell(self) -> None:
+        self.review(protocol=PROTOCOL.replace("| ynnyn |", "| some |").replace("# Protocol\n", "# Protocol\n\nRun on 2026-12-01.\n", 1))
+        self.assertIn("not a y/n sequence", self.messages(search)[0])
 
     # second-rater
     def test_two_raters_without_agreement(self) -> None:

@@ -17,6 +17,7 @@ Each page's markdown source is served at the same path with a .md extension.
 ## Record: what a review lets a reader redo
 
 - [Count every search](https://tewf.github.io/reader-ergonomics-review/principles/record/count-every-search.md): the protocol records every search string with its count, and says what was not searched, so that a reader can run the search again and compare.
+- [Log concepts per result](https://tewf.github.io/reader-ergonomics-review/principles/record/log-concepts-per-result.md): the protocol records, for each result screened and in order, whether it added a concept, so that a stopping estimator or a rule can judge when the search may stop.
 - [Report the second rater](https://tewf.github.io/reader-ergonomics-review/principles/record/report-the-second-rater.md): when two raters score or screen the same items, the review reports how far they agree, and how a disagreement was settled.
 - [Score grey sources in eight subtotals](https://tewf.github.io/reader-ergonomics-review/principles/record/score-grey-in-eight-subtotals.md): a grey source carries Garousi's eight subtotals and a total that adds up; below 10 of 20 it is an example of practice only, and says so.
 - [Trace every figure](https://tewf.github.io/reader-ergonomics-review/principles/record/trace-every-figure.md): a figure in the review names its source and where it was read, or says it is secondary, so that a reader can find it.

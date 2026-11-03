@@ -9,6 +9,13 @@ A run with no error guarantees, for every protocol.md of a review folder: it has
 count, and no row hides several strings behind one count. It warns when the protocol never says what was not searched
 or never states a stopping rule (Garousi 2019, guideline 8). It does not guarantee that the count is what the engine
 returns (a script can re-run an OpenAlex string; this check does not go online). Time O(rows).
+
+Concepts per result. Each such table also needs one column whose header names a concept (`New concept`); each row holds,
+in the order the results were screened, one letter per result: y if it added a concept, n if not (`ynnyn`), or the words
+not run. Without it no stopping estimator can judge the search (ai-augmented-data-gathering, on-the-family). A missing
+column or a malformed cell is an error in a protocol dated on or after 2026-11-04 and a warning before it, so the nine
+reviews written earlier are flagged and not failed. The protocol's date is the first ISO date in its text; a protocol
+with none counts as written before.
 """
 from __future__ import annotations
 
@@ -26,7 +33,23 @@ EXACT = True
 
 NOT_RUN = re.compile(r"not run|not searched|n/a|failed|none|zero|no result|timed out|not returned|timeout", re.IGNORECASE)
 SEVERAL = re.compile(r"\b(\d+)\s+(?:search\s+)?strings\b", re.IGNORECASE)
+CONCEPT_CELL = re.compile(r"^[yn][yn ,]*$", re.IGNORECASE)
+ISO_DATE = re.compile(r"\b(\d{4}-\d{2}-\d{2})\b")
+CONCEPT_FROM = "2026-11-04"
 IDENTIFIER = re.compile(r"^(id|seed|n|no\.?|#)\b", re.IGNORECASE)
+
+
+def check_concepts(path: str, table, kind: str) -> list[Finding]:
+    """The concept column of a search table: present, and a y/n sequence or a stated failure on each row."""
+    column = next((i for i, name in enumerate(table.header) if "concept" in name.lower()), None)
+    if column is None:
+        return [Finding(NAME, path, table.start, "the table of strings has no column of concepts per result (New concept)", kind)]
+    findings = []
+    for line, cells in table.rows:
+        cell = cells[column].strip() if column < len(cells) else ""
+        if not (CONCEPT_CELL.match(cell) or NOT_RUN.search(cell)):
+            findings.append(Finding(NAME, path, line, "the concept cell is not a y/n sequence over the results screened, nor not run", kind))
+    return findings
 
 
 def check_table(path: str, table) -> list[Finding]:
@@ -57,8 +80,11 @@ def check(root: Path, config: dict) -> list[Finding]:
         searches = [t for t in tables(text) if any("string" in name.lower() for name in t.header)]
         if not searches:
             findings.append(Finding(NAME, path, 1, "no table of search strings (a column named String) with a count for each"))
+        dated = ISO_DATE.search(text)
+        kind = "error" if dated and dated.group(1) >= CONCEPT_FROM else "warning"
         for table in searches:
             findings += check_table(path, table)
+            findings += check_concepts(path, table, kind)
         if not re.search(r"not searched", text, re.IGNORECASE):
             findings.append(Finding(NAME, path, 1, "the protocol never says what was not searched", "warning"))
         if not re.search(r"stopping|saturation|exhaust", text, re.IGNORECASE):
