@@ -66,9 +66,9 @@ Step 1 of a review. Its reader is whoever must trust or continue the review, and
 
 | Part | Principle |
 |---|---|
-| The problem first | [overview first](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/document/overview-first.md) |
-| Every term defined once | [define before use](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/document/define-before-use.md) |
-| One name per thing, across the files | [names predict content](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/collection/names-predict-content.md) |
+| The problem first | [overview first](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/document/overview-first.md) |
+| Every term defined once | [define before use](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/document/define-before-use.md) |
+| One name per thing, across the files | [names predict content](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/collection/names-predict-content.md) |
 
 ## Checked by
 

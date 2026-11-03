@@ -41,8 +41,8 @@ Every work a review cites, once, with a stable link. Its reader is a person or a
 
 | Part | Principle |
 |---|---|
-| Keys that name one work | [names predict content](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/collection/names-predict-content.md) |
-| The list kept once | [one place per fact](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/collection/one-place-per-fact.md) |
+| Keys that name one work | [names predict content](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/collection/names-predict-content.md) |
+| The list kept once | [one place per fact](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/collection/one-place-per-fact.md) |
 
 ## Checked by
 

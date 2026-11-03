@@ -60,8 +60,8 @@ Step 4 of a review: what is known, what was not found, and what this repository 
 
 | Part | Principle |
 |---|---|
-| The answer in a table | [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/page/signal-the-structure.md) |
-| Known before what is asked | [overview first](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/document/overview-first.md) |
+| The answer in a table | [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/page/signal-the-structure.md) |
+| Known before what is asked | [overview first](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/document/overview-first.md) |
 
 ## Checked by
 

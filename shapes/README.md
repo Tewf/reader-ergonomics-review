@@ -1,6 +1,6 @@
 # Shapes
 
-A **shape** is the fixed skeleton of one kind of document: every document of that kind has the same parts in the same order. These are the shapes of the files of a literature review. The general shapes (note, folder README, report, commit, decision record) and the reasons for shapes are in [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/shapes/README.md).
+A **shape** is the fixed skeleton of one kind of document: every document of that kind has the same parts in the same order. These are the shapes of the files of a literature review. The general shapes (note, folder README, report, commit, decision record) and the reasons for shapes are in [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/shapes/README.md).
 
 ![The five steps of a review and the file each writes: frame, review, state of the art, position and baseline, with the protocol, sources, against and references kept beside them.](review-files.svg)
 
@@ -51,5 +51,5 @@ Each shape links a filled example, [one small review of our own](examples/second
 
 ## Choosing a shape
 
-- One file, one shape. A text that needs two shapes is two files ([one mode per document](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/document/one-mode-per-document.md)).
+- One file, one shape. A text that needs two shapes is two files ([one mode per document](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/document/one-mode-per-document.md)).
 - Write the files in the order of the five steps; the [files principle](../principles/structure/the-nine-files.md) says why.

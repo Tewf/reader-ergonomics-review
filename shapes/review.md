@@ -54,9 +54,9 @@ Step 2 of a review: the findings, by strand, surveys first. Its reader asks what
 
 | Part | Principle |
 |---|---|
-| One finding per line, in lists | [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/page/signal-the-structure.md) |
-| The question answered at the head of each strand | [overview first](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/document/overview-first.md) |
-| A figure beside the words that explain it | [figure next to its text](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/page/figure-next-to-its-text.md) |
+| One finding per line, in lists | [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/page/signal-the-structure.md) |
+| The question answered at the head of each strand | [overview first](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/document/overview-first.md) |
+| A figure beside the words that explain it | [figure next to its text](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/page/figure-next-to-its-text.md) |
 
 ## Checked by
 

@@ -82,10 +82,16 @@ question = "the name 'references' and the opening are far apart in meaning (0.16
 file = "b605b54f3c61"
 answer = "The name predicts the content: the file opens with the heading `Bibliography` and a table of keys, and the shape says the list may be called the bibliography."
 
-
 [[answer]]
 check = "name-content"
 path = "principles/record/log-concepts-per-result.md"
 question = "the name 'concepts result' and the opening are far apart in meaning (0.14): does the name predict the content?"
 file = "ce03d7ca86e1"
 answer = "The name predicts the content: the file opens with the claim `records, for each result screened and in order, whether it added a concept`."
+
+[[answer]]
+check = "co-change"
+path = "checks/local/search_record.py"
+question = "changed together with checks/test_review_checks.py in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "e6c236b2c5ff"
+answer = "They stay apart: `checks/local/search_record.py` serves another role than the file it changes with, and they change together by construction, not by overlap."

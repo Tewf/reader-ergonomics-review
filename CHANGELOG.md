@@ -7,6 +7,7 @@ A pin move is recorded here, not in decisions/.
 
 ### Added
 
+- Pinned reader-ergonomics v1.21.0 (`2e5b6f0`), from v1.20.0 (`4f99372`): duplication skips the lines a declared shape prescribes
 - The principle [log concepts per result](principles/record/log-concepts-per-result.md), and a New concept column in the
   search tables of the protocol shape. `search-record` asks for it: an error in a protocol dated 2026-11-04 or later,
   a warning before. Cause: no protocol of the family logged what each result added, so no stopping estimator could

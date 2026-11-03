@@ -54,8 +54,8 @@ The evidence against what the review assumes, and the disagreements among its so
 
 | Part | Principle |
 |---|---|
-| The claim as the heading | [names predict content](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/collection/names-predict-content.md) |
-| Disagreements as a table | [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/page/signal-the-structure.md) |
+| The claim as the heading | [names predict content](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/collection/names-predict-content.md) |
+| Disagreements as a table | [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/page/signal-the-structure.md) |
 
 ## Checked by
 
