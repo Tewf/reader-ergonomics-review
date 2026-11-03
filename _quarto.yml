@@ -12,12 +12,21 @@ project:
 
 website:
   title: "Review"
+  description: "The literature review as a genre of the reader-ergonomics family: the five steps, the nine files, the grey score, the second rater and the flow, as shapes with examples and checks."
   site-url: "https://tewf.github.io/reader-ergonomics-review/"
   repo-url: "https://github.com/Tewf/reader-ergonomics-review"
   repo-actions: [source, issue]
   page-navigation: true
   navbar:
     left:
+      - text: Standard
+        href: standard.md
+      - text: Shapes
+        href: shapes/README.md
+      - text: Principles
+        href: principles/README.md
+      - text: Evidence
+        href: evidence/README.md
       - text: Decisions
         href: decisions/README.md
     right:
