@@ -52,14 +52,14 @@ jobs:
           for name in $(python3 -c "import tomllib; print(*tomllib.load(open('repository/checks/config.toml', 'rb'))['bibliography_keys']['family'])"); do
             git clone --quiet --depth 1 "https://github.com/Tewf/$name" "$name"
           done
+      - name: Test the review checks
+        run: python3 -m unittest discover -s repository/checks
       - name: Check the repository, tiers program and meaning
-        # Runs the topic check, the Lean link check and the comparator (checks/local/) with the standard's own.
+        # Runs the five review checks (checks/local/) with the standard's own.
         run: python3 standard/checks/run.py repository --tiers program,meaning --judge flag
       - name: List the questions left for judgment
         if: always()
         run: cat repository/checks/out/needs-judgment.md 2>/dev/null || echo "No questions for judgment."
-
-  # The proofs: Lean checks every declaration the topics name. Mathlib is large, so its prebuilt cache is fetched first.
 
   weekly:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
