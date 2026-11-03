@@ -7,9 +7,11 @@ The **literature review** as a genre of the family, written as shapes with examp
 
 This page in French: [README.fr.md](README.fr.md).
 
-> **Status (2026-11-03):** set up; nothing is written yet beyond the scope. The first job is a literature review, not
-> started. The name is provisional until that review's first step says what the field calls this. It is not an
-> official standard, not a peer-reviewed study and not a new result.
+> **Status (2026-11-03):** a first pass is written: nine [shapes](shapes/README.md) with a small example, five
+> [checks](checks/README.md) with tests, a card of six [principles](standard.md), and a [review of the genre's own
+> evidence](evidence/review-genre/README.md) (25 sources, baseline B1). The five steps and the second rater are
+> conventions, and say so. The name is kept: the field's own word is review. It is not an official standard, not a
+> peer-reviewed study and not a new result.
 >
 > **How it is made:** with Claude, an AI assistant by Anthropic, under the maintainer's direction, the way
 > reader-ergonomics was made. Corrections are welcome as issues.
@@ -54,30 +56,40 @@ digraph where_it_sits {
 | in | the grey scoring: how a source outside journals is graded before it counts | grey sources are most of the practice in this field, and need a grade as a paper does |
 | in | the second rater and the flow of a review, as shapes | an agreement and a count of sources in and out are the review's audit trail |
 | in | a check for each shape | the standard's rule is that what a program can check, a program checks |
-| in | the nine reviews of the two families, as the first examples | a shape without a filled example is not yet usable |
+| in | the nine reviews of the two families, as the first examples | a shape without a filled example is not yet usable; each shape links two of them and a small example of its own |
 | later | a measure of agreement between two raters | the shape comes first; the statistic waits for two raters' real data |
 | out | the search algorithms: where to look and when to stop | [ai-augmented-data-gathering](https://github.com/Tewf/ai-augmented-data-gathering) |
 | out | the principles the shapes apply | [reader-ergonomics](https://github.com/Tewf/reader-ergonomics), linked and never copied |
 
 ## The first job: a literature review
 
-Not started. It follows the order of a thesis review, and it is finished when it can name the baseline.
+Written. It followed the order of a thesis review and is finished because it names its baseline. The field's name for the genre is **systematic literature review**, and **multivocal literature review** when it includes grey sources ([frame](evidence/review-genre/frame.md)); "review" is the field's own word, so the name stays.
 
-1. **Frame:** the problem in one sentence, and what each field calls it. Leads to verify: the multivocal literature review (Garousi 2019), the systematic-review reporting guidelines (PRISMA) and snowballing guidelines (Wohlin 2014). The repository may be renamed then.
-2. **Review:** each name, searched by its academic name, its acronym and its author; surveys first.
-   - guidelines for systematic, multivocal and rapid reviews, by their academic names and their acronyms, surveys first;
-   - how a grey source is graded in the guidelines that do, and what the grade decides;
-   - reporting checklists and any program that checks one, found under its authors' names before anything is written as missing.
-3. **State of the art, and the case against.**
-4. **Position:** what this repository asks that the field does not already answer.
-5. **Baseline:** the existing nine reviews' files as they stand, compared with what the guidelines ask a review to report, which the review of the genre will list.
+### What the review found
 
-## Questions the review must answer
+1. **The guidelines ask for contents, not files.** PRISMA 2020 asks for registration, support, competing interests and availability of data; the nine reviews state none of them. Against, position and baseline are in no guideline ([review, strand 1](evidence/review-genre/review.md)).
+2. **The threshold of 10 of 20 is an example.** Garousi 2019 offers it as what one could set, and reports no agreement between persons. No study of the reliability of grey scores was found.
+3. **A second reader is measured for screening, not for scoring.** Single reviewers missed 8% of eligible reports on average, pairs 0 to 1% (Edwards 2002, secondary); no source rates a quality score twice.
+4. **Searches by string find a minority.** Only 30% of one review's sources came from its protocol's searches, 51% from snowballing (Greenhalgh 2005, secondary), so a record of strings is also a record of its limit.
+5. **No program checks a review's report.** The standard-setting body's own checker is in development ([PRISMA Executive 2026](evidence/bibliography.md)).
 
-- **The files.** Which files do the guidelines require that the nine reviews lack, and which do the nine keep that the guidelines do not ask for?
-- **The grey score.** What grades a grey source in the guidelines, and what grade would the family's own sources get?
-- **The second rater.** What does a second rater cost, and what does it catch that a program cannot?
-- **The checks.** Which parts of a review can a program decide, and which stay a judgment?
+### The baseline
+
+**B1** is the nine reviews of the AI-augmented family and the project-method topic, as they stand at their pinned commits ([baseline](evidence/review-genre/baseline.md)). The checks here are the first program to read them.
+
+### What the checks flag on the nine
+
+Run read-only with `python3 checks/audit.py` on 2026-11-03: 2 errors and 25 warnings in all.
+
+| Check | On the nine | What it flags |
+|---|---|---|
+| `review-files` | 0 | each has the eight files and a shared bibliography |
+| `grey-subtotals` | 0 | every grey row adds up, within its maxima |
+| `second-rater` | 0 | where two raters exist, the agreement is reported |
+| `search-record` | 2 errors, 1 warning | one review has no table of strings and no stopping rule; one grey row has no count |
+| `review-numbers` | 24 warnings | a figure with no key, or no place or word secondary; some are the review's own counts |
+
+The other 24 reviews of the family were written to the earlier contract of 2026-10-29. They draw 411 errors and 705 warnings, mostly layout: grey scores split from their totals, tables of strings with no count column.
 
 ## Check it
 
@@ -85,6 +97,8 @@ Not started. It follows the order of a thesis review, and it is finished when it
 git clone https://github.com/Tewf/reader-ergonomics
 python3 reader-ergonomics/checks/run.py path/to/this/repository
 ```
+
+To read another repository's reviews without changing them: `python3 checks/audit.py path/to/repository`.
 
 CI runs the same checks on every push, and a run fails on any error
 ([checks.yml](https://github.com/Tewf/reader-ergonomics-review/blob/master/.github/workflows/checks.yml)). Every push to
@@ -95,6 +109,11 @@ master also renders the site, [tewf.github.io/reader-ergonomics-review](https://
 
 | Part | Summary |
 |---|---|
+| [standard](standard.md) | the card: read the standard first, then the six principles with their grades |
+| [shapes](shapes/README.md) | the nine files of a review as skeletons, each with a filled example |
+| [principles](principles/README.md) | what the genre adds to the standard: structure and record |
+| [checks](checks/README.md) | the five checks, their tests, and the audit of another repository |
+| [evidence](evidence/README.md) | the review of the genre's own evidence, 25 sources, and the bibliography |
 | [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
 
 ## Licence

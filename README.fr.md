@@ -7,9 +7,11 @@ La **revue de littérature** comme genre de la famille, écrite en formes avec e
 
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
-> **État (2026-11-03) :** mis en place ; rien n'est encore écrit au-delà du périmètre. Le premier travail est une revue
-> de littérature, non commencée. Le nom est provisoire jusqu'à ce que la première étape de cette revue dise comment le
-> domaine nomme la chose. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
+> **État (2026-11-03) :** un premier jet est écrit : neuf [formes](shapes/README.md) avec un petit exemple, cinq
+> [vérifications](checks/README.md) avec leurs tests, une fiche de six [principes](standard.md), et une [revue des
+> preuves du genre](evidence/review-genre/README.md) (25 sources, référence B1). Les cinq étapes et le second
+> évaluateur sont des conventions, et le disent. Le nom est gardé : le mot du domaine est « revue ». Ce n'est ni une
+> norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
 >
 > **Comment il est fait :** avec Claude, un assistant IA d'Anthropic, sous la direction du mainteneur, comme
 > reader-ergonomics. Les corrections sont bienvenues sous forme d'issues.
@@ -54,23 +56,40 @@ digraph where_it_sits {
 | dedans | la notation de la littérature grise : comment une source hors revues est graduée avant de compter | les sources grises font l'essentiel de la pratique dans ce domaine, et ont besoin d'une note comme un article |
 | dedans | le second évaluateur et le flux d'une revue, comme formes | un accord et un compte des sources retenues et écartées sont la piste d'audit de la revue |
 | dedans | une vérification pour chaque forme | la règle de la norme est que ce qu'un programme peut vérifier, un programme le vérifie |
-| dedans | les neuf revues des deux familles, comme premiers exemples | une forme sans exemple rempli n'est pas encore utilisable |
+| dedans | les neuf revues des deux familles, comme premiers exemples | une forme sans exemple rempli n'est pas encore utilisable ; chaque forme en lie deux et un petit exemple à elle |
 | plus tard | une mesure d'accord entre deux évaluateurs | la forme d'abord ; la statistique attend les vraies données de deux évaluateurs |
 | dehors | les algorithmes de recherche : où chercher et quand s'arrêter | [ai-augmented-data-gathering](https://github.com/Tewf/ai-augmented-data-gathering) |
 | dehors | les principes que les formes appliquent | [reader-ergonomics](https://github.com/Tewf/reader-ergonomics), liés et jamais copiés |
 
 ## Le premier travail : une revue de littérature
 
-Non commencée. Elle suit l'ordre d'une revue de thèse, et elle est finie quand elle peut nommer la référence.
+Écrite. Elle a suivi l'ordre d'une revue de thèse et elle est finie parce qu'elle nomme sa référence. Le domaine nomme le genre **revue systématique de littérature**, et **revue de littérature multivocale** quand elle inclut des sources grises ([cadre](evidence/review-genre/frame.md)) ; « revue » est le mot du domaine, le nom reste donc.
 
-1. **Cadrer :** le problème en une phrase, et comment chaque domaine le nomme. Pistes à vérifier : la revue de littérature multivocale (Garousi 2019), les lignes directrices de rapport des revues systématiques (PRISMA) et celles de la boule de neige (Wohlin 2014). Le dépôt peut être renommé alors.
-2. **Revue :** chaque nom, cherché par son nom académique, son acronyme et son auteur ; les synthèses d'abord.
-   - les lignes directrices des revues systématiques, multivocales et rapides, par leur nom académique et leur acronyme, les synthèses d'abord ;
-   - comment une source grise est graduée dans les lignes directrices qui le font, et ce que la note décide ;
-   - les listes de contrôle de rapport et tout programme qui en vérifie une, trouvés sous le nom des auteurs avant d'écrire qu'ils manquent.
-3. **État de l'art, et le dossier contre.**
-4. **Positionnement :** ce que ce dépôt demande et que le domaine ne répond pas déjà.
-5. **Référence :** les fichiers des neuf revues existantes tels qu'ils sont, comparés à ce que les lignes directrices demandent à une revue de rapporter, ce que la revue du genre listera.
+### Ce que la revue a trouvé
+
+1. **Les lignes directrices demandent des contenus, pas des fichiers.** PRISMA 2020 demande l'enregistrement, le soutien, les conflits d'intérêts et la disponibilité des données ; les neuf revues n'en déclarent aucun. Contre, positionnement et référence ne sont dans aucune ligne directrice ([revue, filon 1](evidence/review-genre/review.md)).
+2. **Le seuil de 10 sur 20 est un exemple.** Garousi 2019 l'offre comme ce qu'on pourrait fixer, et ne rapporte aucun accord entre personnes. Aucune étude de la fiabilité des notes grises n'a été trouvée.
+3. **Un second lecteur est mesuré pour le tri, pas pour la note.** Un seul relecteur a manqué en moyenne 8 % des rapports éligibles, une paire 0 à 1 % (Edwards 2002, secondaire). Aucune source ne note deux fois une qualité.
+4. **Les chaînes de recherche trouvent une minorité.** Seulement 30 % des sources d'une revue venaient des recherches de son protocole, 51 % de la boule de neige (Greenhalgh 2005, secondaire). Le relevé des chaînes est donc aussi le relevé de sa limite.
+5. **Aucun programme ne vérifie le rapport d'une revue.** Le vérificateur de l'organisme qui fixe la norme est en développement ([PRISMA Executive 2026](evidence/bibliography.md)).
+
+### La référence
+
+**B1** est les neuf revues de la famille AI-augmented et du sujet project-method, telles qu'elles sont à leurs commits épinglés ([référence](evidence/review-genre/baseline.md)). Les vérifications d'ici sont le premier programme à les lire.
+
+### Ce que les vérifications signalent sur les neuf
+
+Exécutées en lecture seule avec `python3 checks/audit.py` le 2026-11-03 : 2 erreurs et 25 avertissements en tout.
+
+| Vérification | Sur les neuf | Ce qu'elle signale |
+|---|---|---|
+| `review-files` | 0 | chacune a les huit fichiers et une bibliographie partagée |
+| `grey-subtotals` | 0 | chaque ligne grise s'additionne, dans ses maxima |
+| `second-rater` | 0 | là où deux évaluateurs existent, l'accord est rapporté |
+| `search-record` | 2 erreurs, 1 avertissement | une revue n'a pas de tableau de chaînes ni de règle d'arrêt ; une ligne grise n'a pas de décompte |
+| `review-numbers` | 24 avertissements | un chiffre sans clé, ou sans lieu ni le mot secondaire ; certains sont les décomptes de la revue elle-même |
+
+Les 24 autres revues de la famille ont été écrites au contrat antérieur du 2026-10-29. Elles tirent 411 erreurs et 705 avertissements, surtout de mise en page : notes grises séparées de leur total, tableaux de chaînes sans colonne de décompte.
 
 ## Questions auxquelles la revue doit répondre
 
@@ -79,12 +98,16 @@ Non commencée. Elle suit l'ordre d'une revue de thèse, et elle est finie quand
 - **Le second évaluateur.** Que coûte un second évaluateur, et que repère-t-il qu'un programme ne repère pas ?
 - **Les vérifications.** Quelles parties d'une revue un programme peut-il décider, et lesquelles restent un jugement ?
 
+Les réponses sont dans le [positionnement](evidence/review-genre/position.md).
+
 ## Vérifier
 
 ```sh
 git clone https://github.com/Tewf/reader-ergonomics
 python3 reader-ergonomics/checks/run.py chemin/vers/ce/depot
 ```
+
+Pour lire les revues d'un autre dépôt sans les modifier : `python3 checks/audit.py chemin/vers/le/depot`.
 
 La CI exécute les mêmes vérifications à chaque push, et une exécution échoue à la première erreur
 ([checks.yml](https://github.com/Tewf/reader-ergonomics-review/blob/master/.github/workflows/checks.yml)). Chaque push sur
@@ -95,6 +118,11 @@ master construit aussi le site, [tewf.github.io/reader-ergonomics-review](https:
 
 | Partie | Résumé |
 |---|---|
+| [standard](standard.md) | la fiche : lire d'abord la norme, puis les six principes avec leurs niveaux de preuve |
+| [shapes](shapes/README.md) | les neuf fichiers d'une revue comme squelettes, chacun avec un exemple rempli |
+| [principles](principles/README.md) | ce que le genre ajoute à la norme : structure et relevé |
+| [checks](checks/README.md) | les cinq vérifications, leurs tests, et l'audit d'un autre dépôt |
+| [evidence](evidence/README.md) | la revue des preuves du genre, 25 sources, et la bibliographie |
 | [decisions](decisions/) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
 
 ## Licence

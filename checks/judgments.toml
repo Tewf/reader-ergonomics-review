@@ -10,11 +10,75 @@ check = "tree-shape"
 path = "decisions"
 question = "2 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
 file = ""
-answer = "It stays: `decisions` is the folder the decision-record shape names for its records; it holds the README and record 0001 today, and grows one file per choice."
+answer = "It stays: `decisions` is the folder the decision-record shape names for its records; it holds the README and three records today, and grows one file per choice."
+
+[[answer]]
+check = "tree-shape"
+path = "shapes/examples"
+question = "1 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `shapes/examples` holds the one small review the shapes link, and a second example would be a sibling folder, so it is a collection that has one record today."
+
+[[answer]]
+check = "figures-present"
+path = "evidence/review-genre/review.md"
+question = "a long text with no figure, table or diagram: is a relation, set, quantity or process described only in words?"
+file = "cad7ed4ef43c"
+answer = "No: the findings are claims with a figure each, listed under `Strand 1: guidelines and reporting (Q1)` and the next strands; the relations among them are drawn as tables in the state of the art, and a figure here would repeat a table."
+
+[[answer]]
+check = "paraphrase"
+path = "evidence/review-genre/review.md"
+question = "says nearly what shapes/examples/second-reader/review.md (line 3) says, similarity 0.91: one fact in two places?"
+file = "cad7ed4ef43c"
+answer = "Not one fact twice: the example is a cut of this review by design, and its README says so. `Step 2 of the review, read on 2026-11-03` is the opening every review of the shape carries; the evidence stays here and the example links to it."
+
+[[answer]]
+check = "document-mode"
+path = "AGENTS.md"
+question = "reads about equally as explanation and reference: one mode per document?"
+file = "beded9d905a2"
+answer = "Reference: the rules for changing the repository, looked up by heading, such as `Shapes, checks and principles`; the lines of why are one clause each."
 
 [[answer]]
 check = "document-mode"
 path = "README.fr.md"
 question = "reads about equally as how-to and reference: one mode per document?"
-file = "2f84cd3b750f"
-answer = "Reference: a front page read for its `Périmètre` table and its `Questions auxquelles la revue doit répondre`; the shell commands under `Vérifier` are one block, not a procedure."
+file = "78d8ade6d158"
+answer = "Reference: a front page read for its `Périmètre` table and its `Ce que les vérifications signalent sur les neuf`; the shell commands under `Vérifier` are one block, not a procedure."
+
+[[answer]]
+check = "document-mode"
+path = "evidence/review-genre/README.md"
+question = "reads about equally as how-to and reference: one mode per document?"
+file = "e5b2456f51cc"
+answer = "Reference: a folder front page, read for its `Claims` table and its `Files` table; nothing in it is a procedure."
+
+[[answer]]
+check = "document-mode"
+path = "evidence/review-genre/against.md"
+question = "reads about equally as reference and explanation: one mode per document?"
+file = "c6a94a56151d"
+answer = "Reference: contrary evidence listed by claim and found under `Disagreements`; the lines that give a possible reason are marked as hypotheses, not an explanation to learn."
+
+[[answer]]
+check = "document-mode"
+path = "evidence/review-genre/position.md"
+question = "reads about equally as reference and explanation: one mode per document?"
+file = "8aaf6372a5ce"
+answer = "Reference: `Known` and `Not found in these searches` are lookups, and the table under `The four questions` is the answer; the text between them only introduces."
+
+[[answer]]
+check = "document-mode"
+path = "shapes/against.md"
+question = "reads about equally as reference and explanation: one mode per document?"
+file = "c13093b5997a"
+answer = "Reference: a skeleton with the evidence for each part; the only explanation is the table under `Where each part comes from`, which a reader consults, not reads through."
+
+[[answer]]
+check = "name-content"
+path = "shapes/examples/second-reader/references.md"
+question = "the name 'references' and the opening are far apart in meaning (0.16): does the name predict the content?"
+file = "b605b54f3c61"
+answer = "The name predicts the content: the file opens with the heading `Bibliography` and a table of keys, and the shape says the list may be called the bibliography."
+
