@@ -11,6 +11,10 @@ A pin move is recorded here, not in decisions/.
   search tables of the protocol shape. `search-record` asks for it: an error in a protocol dated 2026-11-04 or later,
   a warning before. Cause: no protocol of the family logged what each result added, so no stopping estimator could
   judge a search (ai-augmented-data-gathering).
+- The value `not recorded` for the New concept column, for a search tool that returns a synthesis and not a list.
+  The protocol's Limits section gives the reason on one `Not recorded:` line.
+  `search-record` accepts the value with a warning that names the reason, never an error.
+  With no reason the cell is malformed. Cause: the column could not be filled honestly for such a tool.
 
 ## 2026-11-03
 

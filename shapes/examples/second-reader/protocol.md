@@ -27,10 +27,10 @@ Garousi's seven questions: one yes suggests including grey sources.
 
 Database: OpenAlex, title and abstract, no key and no identity. Counts are of 2026-11-03.
 
-| Id | String as run | OpenAlex |
-|---|---|---|
-| F10 | "second reviewer" OR "second rater" "systematic review" agreement kappa screening | 311 |
-| F11 | "inter-rater" "systematic review" screening reliability large language model | 22 |
+| Id | String as run | OpenAlex | New concept |
+|---|---|---|---|
+| F10 | "second reviewer" OR "second rater" "systematic review" agreement kappa screening | 311 | not recorded |
+| F11 | "inter-rater" "systematic review" screening reliability large language model | 22 | not recorded |
 
 ## 5. Grey search
 
@@ -58,4 +58,5 @@ Garousi's 20 criteria in eight groups; the threshold is 10 of 20. Scores are in 
 ## 10. Not searched, and limits
 
 - Not searched: databases other than OpenAlex, forums, blogs.
+- Not recorded: the top results of each string were read together, not one by one, so no letter per result was kept.
 - One reviewer, no second rater.

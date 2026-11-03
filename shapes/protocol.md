@@ -56,6 +56,7 @@ How the pool was built, so that a reader can run the search again. Its reader is
 ## 10. Not searched, and limits
 
 - Not searched: <what>. Limits: <reviewers, dates, engines>.
+- Not recorded: <one-line reason>. Only when a search tool returns a synthesis and not a list of results; the New concept cells then say `not recorded`.
 ```
 
 ## Where each part comes from
@@ -85,7 +86,7 @@ How the pool was built, so that a reader can run the search again. Its reader is
 2. A row never counts several strings together.
 3. The stopping rule is stated before the search and applied.
 4. The protocol says what was not searched, and names its limits.
-5. Each search table has a column New concept: one letter per result screened, in order, y if it added a concept and n if not, or the words not run.
+5. Each search table has a column New concept: one letter per result screened, in order, y if it added a concept and n if not, or the words not run. A tool that returns a synthesis gives no list to letter: the cell says `not recorded`, and the Limits section gives the reason in one line.
 6. A later pass (forward citations, a second rater) is a numbered section of its own; a second rater's section reports the agreement.
 7. Identity is not sent to any service; a source reachable only that way is called unverifiable.
 
@@ -100,7 +101,7 @@ How the pool was built, so that a reader can run the search again. Its reader is
 ## Checked by
 
 - `search-record` (exact): a table with a String column, a count or a stated failure on each row, and no row for several strings. It warns when the protocol never says what was not searched or states no stopping rule.
-- `search-record` also asks the New concept column: an error in a protocol dated 2026-11-04 or later, a warning before.
+- `search-record` also asks the New concept column: an error in a protocol dated 2026-11-04 or later, a warning before. A cell saying `not recorded` is accepted with a warning that names the reason given in the Limits section, never an error; with no reason it is a malformed cell.
 - `second-rater` (exact): a second-rater section reports an agreement.
 - `shape-conformance` (exact): the ten headings.
 - That the count is what the engine returns is checked by running the search again, not here.

@@ -12,7 +12,10 @@ returns (a script can re-run an OpenAlex string; this check does not go online).
 
 Concepts per result. Each such table also needs one column whose header names a concept (`New concept`); each row holds,
 in the order the results were screened, one letter per result: y if it added a concept, n if not (`ynnyn`), or the words
-not run. Without it no stopping estimator can judge the search (ai-augmented-data-gathering, on-the-family). A missing
+not run. When the search tool returns a synthesis and not a list of results, there is nothing to letter: the cell may
+say `not recorded`, with a one-line reason in the protocol's Limits section (a line `Not recorded: <reason>`). That is
+accepted with a warning that names the reason, never an error; `not recorded` with no reason is a malformed cell.
+Without it no stopping estimator can judge the search (ai-augmented-data-gathering, on-the-family). A missing
 column or a malformed cell is an error in a protocol dated on or after 2026-11-04 and a warning before it, so the nine
 reviews written earlier are flagged and not failed. The protocol's date is the first ISO date in its text; a protocol
 with none counts as written before.
@@ -25,7 +28,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from _review import read, review_folders, tables  # noqa: E402
+from _review import read, review_folders, sections, tables  # noqa: E402
 from framework.check_api import Finding  # noqa: E402
 
 NAME = "search-record"
@@ -36,10 +39,23 @@ SEVERAL = re.compile(r"\b(\d+)\s+(?:search\s+)?strings\b", re.IGNORECASE)
 CONCEPT_CELL = re.compile(r"^[yn][yn ,]*$", re.IGNORECASE)
 ISO_DATE = re.compile(r"\b(\d{4}-\d{2}-\d{2})\b")
 CONCEPT_FROM = "2026-11-04"
+NOT_RECORDED = re.compile(r"^not recorded\b", re.IGNORECASE)
+REASON = re.compile(r"not recorded\s*[:;,.\-]\s*(\S.*)", re.IGNORECASE)
 IDENTIFIER = re.compile(r"^(id|seed|n|no\.?|#)\b", re.IGNORECASE)
 
 
-def check_concepts(path: str, table, kind: str) -> list[Finding]:
+def limits_reason(text: str) -> str | None:
+    """The reason given on a `Not recorded:` line under a heading that names the limits, or None."""
+    lines = text.splitlines()
+    for section in sections(text):
+        if "limit" in section.title.lower():
+            found = REASON.search("\n".join(lines[section.start:section.end]))
+            if found:
+                return found.group(1).strip()
+    return None
+
+
+def check_concepts(path: str, table, kind: str, reason: str | None = None) -> list[Finding]:
     """The concept column of a search table: present, and a y/n sequence or a stated failure on each row."""
     column = next((i for i, name in enumerate(table.header) if "concept" in name.lower()), None)
     if column is None:
@@ -47,7 +63,12 @@ def check_concepts(path: str, table, kind: str) -> list[Finding]:
     findings = []
     for line, cells in table.rows:
         cell = cells[column].strip() if column < len(cells) else ""
-        if not (CONCEPT_CELL.match(cell) or NOT_RUN.search(cell)):
+        if NOT_RECORDED.match(cell):
+            if reason:
+                findings.append(Finding(NAME, path, line, f"the concept cell says not recorded; reason in Limits: {reason}", "warning"))
+            else:
+                findings.append(Finding(NAME, path, line, "the concept cell says not recorded, with no reason on a 'Not recorded:' line in the Limits section", kind))
+        elif not (CONCEPT_CELL.match(cell) or NOT_RUN.search(cell)):
             findings.append(Finding(NAME, path, line, "the concept cell is not a y/n sequence over the results screened, nor not run", kind))
     return findings
 
@@ -82,9 +103,10 @@ def check(root: Path, config: dict) -> list[Finding]:
             findings.append(Finding(NAME, path, 1, "no table of search strings (a column named String) with a count for each"))
         dated = ISO_DATE.search(text)
         kind = "error" if dated and dated.group(1) >= CONCEPT_FROM else "warning"
+        reason = limits_reason(text)
         for table in searches:
             findings += check_table(path, table)
-            findings += check_concepts(path, table, kind)
+            findings += check_concepts(path, table, kind, reason)
         if not re.search(r"not searched", text, re.IGNORECASE):
             findings.append(Finding(NAME, path, 1, "the protocol never says what was not searched", "warning"))
         if not re.search(r"stopping|saturation|exhaust", text, re.IGNORECASE):
