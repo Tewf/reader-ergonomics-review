@@ -14,7 +14,8 @@ Concepts per result. Each such table also needs one column whose header names a 
 in the order the results were screened, one letter per result: y if it added a concept, n if not (`ynnyn`), or the words
 not run. When the search tool returns a synthesis and not a list of results, there is nothing to letter: the cell may
 say `not recorded`, with a one-line reason in the protocol's Limits section (a line `Not recorded: <reason>`). That is
-accepted with a warning that names the reason, never an error; `not recorded` with no reason is a malformed cell.
+accepted without a finding: a reason in the cell (`not recorded: ...`, `, ...` or `(...)`) or on that line answers it.
+`not recorded` with no reason anywhere is a malformed cell.
 Without it no stopping estimator can judge the search (ai-augmented-data-gathering, on-the-family). A missing
 column or a malformed cell is an error in a protocol dated on or after 2026-11-04 and a warning before it, so the nine
 reviews written earlier are flagged and not failed. The protocol's date is the first ISO date in its text; a protocol
@@ -40,6 +41,7 @@ CONCEPT_CELL = re.compile(r"^[yn][yn ,]*$", re.IGNORECASE)
 ISO_DATE = re.compile(r"\b(\d{4}-\d{2}-\d{2})\b")
 CONCEPT_FROM = "2026-11-04"
 NOT_RECORDED = re.compile(r"^not recorded\b", re.IGNORECASE)
+INLINE_REASON = re.compile(r"^not recorded\s*[:,(]\s*\S", re.IGNORECASE)
 REASON = re.compile(r"not recorded\s*[:;,.\-]\s*(\S.*)", re.IGNORECASE)
 IDENTIFIER = re.compile(r"^(id|seed|n|no\.?|#)\b", re.IGNORECASE)
 
@@ -64,8 +66,8 @@ def check_concepts(path: str, table, kind: str, reason: str | None = None) -> li
     for line, cells in table.rows:
         cell = cells[column].strip() if column < len(cells) else ""
         if NOT_RECORDED.match(cell):
-            if reason:
-                findings.append(Finding(NAME, path, line, f"the concept cell says not recorded; reason in Limits: {reason}", "warning"))
+            if INLINE_REASON.match(cell) or reason:
+                continue  # answered: the reason is in the cell or on the Limits line
             else:
                 findings.append(Finding(NAME, path, line, "the concept cell says not recorded, with no reason on a 'Not recorded:' line in the Limits section", kind))
         elif not (CONCEPT_CELL.match(cell) or NOT_RUN.search(cell)):

@@ -201,12 +201,15 @@ class Rules(unittest.TestCase):
         self.review(protocol=PROTOCOL.replace("| ynnyn |", "| some |").replace("# Protocol\n", "# Protocol\n\nRun on 2026-12-01.\n", 1))
         self.assertIn("not a y/n sequence", self.messages(search)[0])
 
-    def test_not_recorded_with_a_reason_is_a_warning_even_after_the_date(self) -> None:
+    def test_not_recorded_with_a_reason_in_the_cell_passes(self) -> None:
+        text = PROTOCOL.replace("| ynnyn |", "| not recorded: the engine returns one synthesis |").replace("# Protocol\n", "# Protocol\n\nRun on 2026-12-01.\n", 1)
+        self.review(protocol=text)
+        self.assertEqual(search.check(self.root, {}), [])
+
+    def test_not_recorded_with_a_reason_on_the_limits_line_passes(self) -> None:
         text = PROTOCOL.replace("| ynnyn |", "| not recorded |").replace("# Protocol\n", "# Protocol\n\nRun on 2026-12-01.\n", 1)
         self.review(protocol=text.replace("Forums.", "Forums.\n\n## Limits\n\n- Not recorded: the engine returns one synthesis, not a list.\n"))
-        found = search.check(self.root, {})
-        self.assertEqual([f.kind for f in found], ["warning"])
-        self.assertIn("the engine returns one synthesis, not a list", found[0].message)
+        self.assertEqual(search.check(self.root, {}), [])
 
     def test_not_recorded_without_a_reason_is_a_malformed_cell(self) -> None:
         text = PROTOCOL.replace("| ynnyn |", "| not recorded |").replace("# Protocol\n", "# Protocol\n\nRun on 2026-12-01.\n", 1)
