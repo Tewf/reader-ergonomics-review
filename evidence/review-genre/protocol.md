@@ -32,26 +32,26 @@ Garousi's seven questions (Table 4), answered for this topic. One yes suggests i
 
 Database: OpenAlex, `title_and_abstract.search`, no key and no identity. Counts are of 2026-11-03.
 
-| Id | String as run | OpenAlex |
-|---|---|---|
-| F1 | "multivocal literature review" "software engineering" | 77 |
-| F2 | "snowballing" "systematic literature" | 806 |
-| F3 | "grey literature" "software engineering" "systematic" | 56 |
-| F4 | "guidelines" "systematic literature reviews" "software engineering" | 292 |
-| F5 | "multivocal literature reviews" tertiary study software engineering | 3 |
-| F6 | "grey literature" "quality assessment" "inter-rater" | 18 |
-| F7 | "multivocal" "grey literature" "quality assessment" criteria "inter-rater" OR "agreement" | 10 |
-| F8 | "AACODS" checklist grey literature | 52 |
-| F9 | "inter-rater agreement" "quality assessment" "systematic reviews" "software engineering" | 1 |
-| F10 | "second reviewer" OR "second rater" "systematic review" agreement kappa screening | 311 |
-| F11 | "inter-rater" "systematic review" screening reliability large language model | 22 |
-| F12 | "large language models" "title and abstract screening" "systematic review" | 46 |
-| F13 | "PRISMA" adherence "software engineering" systematic reviews reporting quality | 0 |
-| F14 | "reporting quality" "systematic literature reviews" "software engineering" checklist compliance | 0 |
-| F15 | automated checking "PRISMA" checklist compliance systematic review tool | 1 |
-| F16 | "PRISMA-Check" | 37 |
-| F17 | "PRISMA 2020" adherence assessment tool development protocol | 8 |
-| F18 | GitHub "systematic review" reproducibility "search strings" reported counts | 0 |
+| Id | String as run | OpenAlex | New concept |
+|---|---|---|---|
+| F1 | "multivocal literature review" "software engineering" | 77 | not recorded |
+| F2 | "snowballing" "systematic literature" | 806 | not recorded |
+| F3 | "grey literature" "software engineering" "systematic" | 56 | not recorded |
+| F4 | "guidelines" "systematic literature reviews" "software engineering" | 292 | not recorded |
+| F5 | "multivocal literature reviews" tertiary study software engineering | 3 | not recorded |
+| F6 | "grey literature" "quality assessment" "inter-rater" | 18 | not recorded |
+| F7 | "multivocal" "grey literature" "quality assessment" criteria "inter-rater" OR "agreement" | 10 | not recorded |
+| F8 | "AACODS" checklist grey literature | 52 | not recorded |
+| F9 | "inter-rater agreement" "quality assessment" "systematic reviews" "software engineering" | 1 | not recorded |
+| F10 | "second reviewer" OR "second rater" "systematic review" agreement kappa screening | 311 | not recorded |
+| F11 | "inter-rater" "systematic review" screening reliability large language model | 22 | not recorded |
+| F12 | "large language models" "title and abstract screening" "systematic review" | 46 | not recorded |
+| F13 | "PRISMA" adherence "software engineering" systematic reviews reporting quality | 0 | not recorded: no results |
+| F14 | "reporting quality" "systematic literature reviews" "software engineering" checklist compliance | 0 | not recorded: no results |
+| F15 | automated checking "PRISMA" checklist compliance systematic review tool | 1 | not recorded |
+| F16 | "PRISMA-Check" | 37 | not recorded |
+| F17 | "PRISMA 2020" adherence assessment tool development protocol | 8 | not recorded |
+| F18 | GitHub "systematic review" reproducibility "search strings" reported counts | 0 | not recorded: no results |
 
 - The top 6 to 8 results of each string by citation count were read by title; about 87 titles in all.
 - Zero results (F13, F14, F18) are a statement about the query. F16 returned 37 works that mention the word in passing.
@@ -63,12 +63,12 @@ Database: OpenAlex, `title_and_abstract.search`, no key and no identity. Counts 
 
 ## 5. Grey search
 
-| Id | Producer | What was read | Result |
-|---|---|---|---|
-| G1 | Cochrane Handbook, chapter 4 | the page, searched for grey, independent and duplicate | read in part, included (Lefebvre 2025) |
-| G2 | PRISMA website, 3 pages | the PRISMA 2020 page, the home page, the PRISMA-Check page | included (PRISMA Executive 2026) |
-| G3 | AACODS checklist (a university repository) | the address returned a web page, not the checklist | not read, not included |
-| G4 | Environmental evidence guidelines page | the request was refused by a bot check | unverifiable, not included |
+| Id | Producer | What was read | Result | New concept |
+|---|---|---|---|---|
+| G1 | Cochrane Handbook, chapter 4 | the page, searched for grey, independent and duplicate | read in part, included (Lefebvre 2025) | not recorded |
+| G2 | PRISMA website, 3 pages | the PRISMA 2020 page, the home page, the PRISMA-Check page | included (PRISMA Executive 2026) | not recorded |
+| G3 | AACODS checklist (a university repository) | the address returned a web page, not the checklist | not read, not included | not run |
+| G4 | Environmental evidence guidelines page | the request was refused by a bot check | unverifiable, not included | not run |
 
 - The bot check was not bypassed.
 - Not searched: forums, Q/A sites, talks, videos, blogs, books, theses.
@@ -100,3 +100,4 @@ Garousi's 20 criteria (Table 7), scored 1, 0.5 or 0 and summed in eight groups: 
 - Eighteen of 23 formal works were read from the abstract only.
 - The searches are English and keyword based, on OpenAlex alone. Google Scholar and the software engineering databases were not searched.
 - Counts change with the index; they are those of 2026-11-03.
+- Not recorded: the results of each string were read by title and the screening kept no letter per result, so no record of which result added a concept exists; it cannot be rebuilt afterwards.
