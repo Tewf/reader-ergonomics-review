@@ -88,6 +88,7 @@ How the pool was built, so that a reader can run the search again. Its reader is
 4. The protocol says what was not searched, and names its limits.
 5. Each search table has a column New concept: one letter per result screened, in order, y if it added a concept and n if not, or the words not run. A tool that returns a synthesis gives no list to letter: the cell says `not recorded`, and the Limits section gives the reason in one line.
 6. A later pass (forward citations, a second rater) is a numbered section of its own; a second rater's section reports the agreement.
+   The second rater comes from a different model family than the first: errors correlated at rho make n raters worth n / (1 + (n - 1) rho), at most 1 / rho.
 7. Identity is not sent to any service; a source reachable only that way is called unverifiable.
 
 ## The principles it applies
