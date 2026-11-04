@@ -3,7 +3,7 @@
 The releases this repository pins, newest first, in the form of [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 A pin move is recorded here, not in decisions/.
 
-## Unreleased
+## [0.1.0] - 2026-11-04
 
 ### Added
 
@@ -16,6 +16,7 @@ A pin move is recorded here, not in decisions/.
   The protocol's Limits section gives the reason on one `Not recorded:` line.
   `search-record` accepts the value with a warning that names the reason, never an error.
   With no reason the cell is malformed. Cause: the column could not be filled honestly for such a tool.
+- Tag v0.1.0 and a GitHub release of the same name.
 
 ## 2026-11-03
 
