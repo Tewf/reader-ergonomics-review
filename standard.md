@@ -1,6 +1,6 @@
 # The review standard
 
-What writing a literature review as nine files adds to the standard. It adds the files in which a reader and a program find a result, and the record that lets a reader redo the search, the scores and the figures. It extends [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/standard.md): read that one first. Its principles come from the [review of the genre](evidence/review-genre/README.md); most are conventions, and each says so.
+What writing a literature review as nine files adds to the standard. It adds the files in which a reader and a program find a result, and the record that lets a reader redo the search, the scores and the figures. It extends [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/0206e6950b4feca4194af419384c217863b7c42e/standard.md): read that one first. Its principles come from the [review of the genre](evidence/review-genre/README.md); most are conventions, and each says so.
 
 ## How to use it
 
@@ -8,7 +8,7 @@ What writing a literature review as nine files adds to the standard. It adds the
 2. **Write to the principles** below, and to those of reader-ergonomics, which still hold.
 3. **Check:** run the standard's checks on the repository, and this repository's [audit](checks/README.md) on any other. `review-files` checks the nine files, `grey-subtotals` the grey scores, `review-numbers` the figures, `search-record` the strings and `second-rater` the agreement.
 
-Grades mean what they mean in [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/standard.md#grades): measured, supported with caveat, convention, not supported. Each principle states its grade and never claims more.
+Grades mean what they mean in [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/0206e6950b4feca4194af419384c217863b7c42e/standard.md#grades): measured, supported with caveat, convention, not supported. Each principle states its grade and never claims more.
 
 ## Principles
 

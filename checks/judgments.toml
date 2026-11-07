@@ -95,3 +95,10 @@ path = "checks/local/search_record.py"
 question = "changed together with checks/test_review_checks.py in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "e6c236b2c5ff"
 answer = "They stay apart: `checks/local/search_record.py` serves another role than the file it changes with, and they change together by construction, not by overlap."
+
+[[answer]]
+check = "co-change"
+path = "checks/local/search_record.py"
+question = "changed together with checks/test_review_checks.py in 4 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "d6a34c0acf03"
+answer = "They stay apart: `checks/local/search_record.py` serves another role than the file it changes with, and they change together by construction, not by overlap."

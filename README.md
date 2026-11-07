@@ -42,7 +42,7 @@ digraph where_it_sits {
 
 </details>
 
-- **It extends [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/standard.md)** (v1.21.0), as each genre does, and runs the standard's checks in CI.
+- **It extends [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/0206e6950b4feca4194af419384c217863b7c42e/standard.md)** (v1.21.0), as each genre does, and runs the standard's checks in CI.
 - **It builds on [reader-ergonomics-topic](https://github.com/Tewf/reader-ergonomics-topic)**: a review's files are topics.
 - **It points to [ai-augmented-data-gathering](https://github.com/Tewf/ai-augmented-data-gathering)** for the algorithms that search, and does not depend on it.
 - **It links down only.** The family's map is [reader-ergonomics-family](https://github.com/Tewf/reader-ergonomics-family).

@@ -95,9 +95,9 @@ How the pool was built, so that a reader can run the search again. Its reader is
 
 | Part | Principle |
 |---|---|
-| Strings in a table, counts beside | [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/page/signal-the-structure.md) |
-| Numbered sections in the order of the work | [define before use](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/document/define-before-use.md) |
-| Nothing repeated from the guidelines | [one place per fact](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/collection/one-place-per-fact.md) |
+| Strings in a table, counts beside | [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/0206e6950b4feca4194af419384c217863b7c42e/principles/page/signal-the-structure.md) |
+| Numbered sections in the order of the work | [define before use](https://github.com/Tewf/reader-ergonomics/blob/0206e6950b4feca4194af419384c217863b7c42e/principles/document/define-before-use.md) |
+| Nothing repeated from the guidelines | [one place per fact](https://github.com/Tewf/reader-ergonomics/blob/0206e6950b4feca4194af419384c217863b7c42e/principles/collection/one-place-per-fact.md) |
 
 ## Checked by
 
