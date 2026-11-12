@@ -70,9 +70,9 @@ Score is out of 20, then the groups in the order authority, methodology, objecti
 
 | Part | Principle |
 |---|---|
-| Tables for counts and for sources | [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/0206e6950b4feca4194af419384c217863b7c42e/principles/page/signal-the-structure.md) |
-| The pool stated before its use | [overview first](https://github.com/Tewf/reader-ergonomics/blob/0206e6950b4feca4194af419384c217863b7c42e/principles/document/overview-first.md) |
-| A source's facts in one row | [one place per fact](https://github.com/Tewf/reader-ergonomics/blob/0206e6950b4feca4194af419384c217863b7c42e/principles/collection/one-place-per-fact.md) |
+| Tables for counts and for sources | [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/principles/page/signal-the-structure.md) |
+| The pool stated before its use | [overview first](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/principles/document/overview-first.md) |
+| A source's facts in one row | [one place per fact](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/principles/collection/one-place-per-fact.md) |
 
 ## Checked by
 
