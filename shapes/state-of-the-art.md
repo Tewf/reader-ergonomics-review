@@ -33,7 +33,7 @@ Step 3 of a review: for each question, who holds the record, by what method, mea
 ## Worked example
 
 - Ours, small and complete: [second-reader/state-of-the-art.md](examples/second-reader/state-of-the-art.md).
-- In the family, at their pinned commits: [human-ai-teaming](https://github.com/Tewf/ai-augmented-project/blob/cf2216058daf3e2ccd82328864ac4d3ff6de2ced/evidence/human-ai-teaming/state-of-the-art.md) and [multi-agent-teams](https://github.com/Tewf/ai-augmented-agents/blob/8a05e7eb88a41cfb53c8188fc9faacac94e79d02/evidence/multi-agent-teams/state-of-the-art.md).
+- In the family, at their pinned commits: [human-ai-teaming](https://github.com/Tewf/ai-augmented-project/blob/7b65bd3961f04fbc54e6bfa60cc5eabfccc77b38/evidence/human-ai-teaming/state-of-the-art.md) and [multi-agent-teams](https://github.com/Tewf/ai-augmented-agents/blob/8a05e7eb88a41cfb53c8188fc9faacac94e79d02/evidence/multi-agent-teams/state-of-the-art.md).
 
 ## The rules
 

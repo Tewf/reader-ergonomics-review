@@ -53,7 +53,7 @@ Step 1 of a review. Its reader is whoever must trust or continue the review, and
 ## Worked example
 
 - Ours, small and complete: [second-reader/frame.md](examples/second-reader/frame.md).
-- In the family, at their pinned commits: [human-ai-teaming](https://github.com/Tewf/ai-augmented-project/blob/cf2216058daf3e2ccd82328864ac4d3ff6de2ced/evidence/human-ai-teaming/frame.md) and [multi-agent-teams](https://github.com/Tewf/ai-augmented-agents/blob/8a05e7eb88a41cfb53c8188fc9faacac94e79d02/evidence/multi-agent-teams/frame.md).
+- In the family, at their pinned commits: [human-ai-teaming](https://github.com/Tewf/ai-augmented-project/blob/7b65bd3961f04fbc54e6bfa60cc5eabfccc77b38/evidence/human-ai-teaming/frame.md) and [multi-agent-teams](https://github.com/Tewf/ai-augmented-agents/blob/8a05e7eb88a41cfb53c8188fc9faacac94e79d02/evidence/multi-agent-teams/frame.md).
 
 ## The rules
 

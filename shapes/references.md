@@ -28,7 +28,7 @@ Every work a review cites, once, with a stable link. Its reader is a person or a
 ## Worked example
 
 - Ours, small and complete: [second-reader/references.md](examples/second-reader/references.md).
-- In the family, at their pinned commits: [the project's bibliography](https://github.com/Tewf/ai-augmented-project/blob/cf2216058daf3e2ccd82328864ac4d3ff6de2ced/evidence/bibliography.md) and [the agents' bibliography](https://github.com/Tewf/ai-augmented-agents/blob/8a05e7eb88a41cfb53c8188fc9faacac94e79d02/evidence/bibliography.md).
+- In the family, at their pinned commits: [the project's bibliography](https://github.com/Tewf/ai-augmented-project/blob/7b65bd3961f04fbc54e6bfa60cc5eabfccc77b38/evidence/bibliography.md) and [the agents' bibliography](https://github.com/Tewf/ai-augmented-agents/blob/8a05e7eb88a41cfb53c8188fc9faacac94e79d02/evidence/bibliography.md).
 
 ## The rules
 

@@ -13,7 +13,7 @@ The evidence against what the front page assumes, and the disagreements. Sources
 - A standard-setting body asks for grey sources without scoring them (Lefebvre 2025).
 - The threshold of 10 of 20 is an example in the guideline, not a rule (Garousi 2019, section 5.2).
 - Another group proposes a different quality checklist for grey sources (Yasin 2020, abstract, secondary).
-- No study measures how reliably two persons score a source. In the family's first run, a second rater agreed on the threshold decision for 3 of 9 grey sources, kappa 0.07 ([human-ai-teaming protocol, section 12](https://github.com/Tewf/ai-augmented-project/blob/cf2216058daf3e2ccd82328864ac4d3ff6de2ced/evidence/human-ai-teaming/protocol.md)). One run on nine sources is an anecdote.
+- No study measures how reliably two persons score a source. In the family's first run, a second rater agreed on the threshold decision for 3 of 9 grey sources, kappa 0.07 ([human-ai-teaming protocol, section 12](https://github.com/Tewf/ai-augmented-project/blob/7b65bd3961f04fbc54e6bfa60cc5eabfccc77b38/evidence/human-ai-teaming/protocol.md)). One run on nine sources is an anecdote.
 
 ## Against "two readers, always"
 
