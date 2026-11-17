@@ -7,6 +7,7 @@ A pin move is recorded here, not in decisions/.
 
 ### Changed
 
+- Pinned reader-ergonomics v1.24.3 (`722cfa4`), from v1.24.2 (`65e4247`): a DOI that holds `<`, `>` and `;` is read whole and a server error now warns instead of failing the online reference run.
 - Pinned reader-ergonomics v1.24.2 (`65e4247`), from v1.22.1 (`0206e69`): fixes that remove false findings in the sentence, term and figure checks, and `[defined_terms] cues`.
 
 ## [0.1.1] - 2026-11-07

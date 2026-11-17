@@ -47,8 +47,8 @@ Step 3 of a review: for each question, who holds the record, by what method, mea
 
 | Part | Principle |
 |---|---|
-| A table per question | [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/principles/page/signal-the-structure.md) |
-| The holder next to what it says | [figure next to its text](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/principles/page/figure-next-to-its-text.md) |
+| A table per question | [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/722cfa4b0ad65968e2c7e6fdc07057c9bab0e172/principles/page/signal-the-structure.md) |
+| The holder next to what it says | [figure next to its text](https://github.com/Tewf/reader-ergonomics/blob/722cfa4b0ad65968e2c7e6fdc07057c9bab0e172/principles/page/figure-next-to-its-text.md) |
 
 ## Checked by
 
